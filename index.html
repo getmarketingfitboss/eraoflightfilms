@@ -1,0 +1,1006 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaurav Hrishikesh Thakur — Director</title>
+  <meta name="description" content="Gaurav Hrishikesh Thakur — Film Director, Writer & Editor. Era of Light Films.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #F7F5F0;
+      --ink: #111010;
+      --mid: #6B6860;
+      --pale: #E8E5DE;
+      --accent: #B8925A;
+      --white: #FFFFFF;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --mono: 'DM Mono', monospace;
+      --sans: 'Outfit', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(247,245,240,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--pale);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.4rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 6rem 3rem;
+      border-right: 1px solid var(--pale);
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--mid);
+    }
+
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      margin: 1.6rem 0 2.8rem;
+      max-width: 380px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 0.3rem;
+      width: fit-content;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .hero-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.4rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--pale);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .hero-reel-wrapper {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-reel-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      pointer-events: none;
+    }
+
+    .reel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(17,16,16,0.5) 0%, rgba(17,16,16,0.1) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem;
+    }
+
+    .reel-play-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .play-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .reel-play-btn:hover .play-circle { background: rgba(255,255,255,0.15); }
+
+    .play-circle svg { margin-left: 3px; }
+
+    .reel-play-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .reel-caption {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 7rem 3rem; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 4rem;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--pale);
+      margin-left: 1rem;
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--white); border-top: 1px solid var(--pale); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--ink);
+      aspect-ratio: 16/10;
+    }
+
+    .project-card .card-thumb {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, #2a2825 0%, #111010 100%);
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    .project-card:hover .card-thumb { transform: scale(1.04); }
+
+    .project-card .card-num {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.4rem;
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .project-card .card-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.6rem 1.6rem 1.4rem;
+      background: linear-gradient(to top, rgba(17,16,16,0.95) 0%, transparent 100%);
+      transform: translateY(30%);
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    .project-card:hover .card-info { transform: translateY(0); }
+
+    .card-genre {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-year {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .card-desc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.6rem;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 0.3s 0.1s;
+    }
+
+    .project-card:hover .card-desc { opacity: 1; }
+
+    /* Featured Project */
+    .project-card.featured {
+      grid-column: span 2;
+      aspect-ratio: 16/7;
+    }
+
+    .project-card.featured .card-title { font-size: 2rem; }
+
+    /* ── REEL ── */
+    #reel {
+      background: var(--ink);
+      color: var(--white);
+      text-align: center;
+      padding: 7rem 3rem;
+    }
+
+    #reel .section-title { color: var(--white); }
+    #reel .section-num { color: var(--accent); }
+    #reel .section-rule { background: rgba(255,255,255,0.1); }
+
+    .reel-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .reel-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .reel-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .reel-note {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.3);
+      margin-top: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 0;
+    }
+
+    .about-text {
+      padding: 7rem 4rem 7rem 3rem;
+      border-right: 1px solid var(--pale);
+    }
+
+    .about-text .section-header { margin-bottom: 2.5rem; }
+
+    .about-body p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.4rem;
+      font-weight: 300;
+    }
+
+    .about-body p:first-child::first-letter {
+      font-size: 3.2em;
+      font-weight: 300;
+      float: left;
+      line-height: 0.75;
+      margin: 0.1em 0.08em 0 0;
+      color: var(--accent);
+    }
+
+    .about-highlights {
+      padding: 7rem 3rem 7rem 4rem;
+      background: var(--pale);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .highlight-item {
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(111,104,96,0.2);
+    }
+
+    .highlight-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .highlight-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+
+    .highlight-value {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    #contact .section-title { color: var(--white); }
+    #contact .section-rule { background: rgba(255,255,255,0.1); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 3rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .contact-item-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .contact-item-value {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contact-item-value a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item-value a:hover { color: var(--accent); }
+
+    .contact-social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.6rem 1rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .social-link:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+    /* Contact form side */
+    .contact-form-side {
+      padding-top: 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 0.8rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea { height: 110px; }
+
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0C0B0B;
+      color: rgba(255,255,255,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 3rem;
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { gap: 1.4rem; }
+
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 5rem 1.5rem 3rem; border-right: none; border-bottom: 1px solid var(--pale); }
+      .hero-right { height: 55vw; min-height: 280px; }
+
+      section { padding: 5rem 1.5rem; }
+
+      .project-card.featured { grid-column: span 1; aspect-ratio: 16/10; }
+      .project-card.featured .card-title { font-size: 1.4rem; }
+
+      #about { grid-template-columns: 1fr; }
+      .about-text { padding: 5rem 1.5rem; border-right: none; border-bottom: 1px solid var(--pale); }
+      .about-highlights { padding: 3rem 1.5rem; }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      footer { flex-direction: column; gap: 0.8rem; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Era of <span>Light</span> Films</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#reel">Reel</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-label">Film Director · Writer · Editor</p>
+      <h1 class="hero-name">
+        Gaurav<br>
+        <em>Hrishikesh</em><br>
+        Thakur
+      </h1>
+      <p class="hero-tagline">
+        A creatively introspective filmmaker integrating high-end visual storytelling with deeply human narratives.
+      </p>
+      <a href="#projects" class="hero-cta">
+        View Projects
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+          <path d="M1 5H15M11 1L15 5L11 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Independent Films</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">22+</span>
+          <span class="stat-label">Commercial Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">9</span>
+          <span class="stat-label">Festival Awards</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-reel-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/coDbPbpfVzE?autoplay=1&mute=1&loop=1&playlist=coDbPbpfVzE&controls=0&showinfo=0&rel=0&modestbranding=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="Era of Light Films showreel"
+        ></iframe>
+      </div>
+      <div class="reel-overlay">
+        <a href="https://youtu.be/coDbPbpfVzE" target="_blank" rel="noopener" class="reel-play-btn">
+          <div class="play-circle">
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
+              <path d="M1.5 1L12.5 8L1.5 15V1Z" fill="white"/>
+            </svg>
+          </div>
+          <span class="reel-play-label">Watch Film</span>
+        </a>
+        <p class="reel-caption">Era of Light Films — Official Selection, Indian National Awards</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header fade-up">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Selected Works</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Featured -->
+      <div class="project-card featured fade-up">
+        <div class="card-thumb" style="background: linear-gradient(160deg, #1a1a28 0%, #0d0d15 100%);"></div>
+        <span class="card-num">001</span>
+        <div class="card-info">
+          <p class="card-genre">Short Film · Official Selection</p>
+          <h3 class="card-title">Era of Light</h3>
+          <p class="card-year">Indian National Awards — Short Film Category</p>
+          <p class="card-desc">Official selection at the Indian National Awards. A landmark short film that defines the visual language of Era of Light Films.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="card-thumb" style="background: linear-gradient(200deg, #1f1a14 0%, #0f0b07 100%);"></div>
+        <span class="card-num">002</span>
+        <div class="card-info">
+          <p class="card-genre">Short Film</p>
+          <h3 class="card-title">A Method in Multishade</h3>
+          <p class="card-year">Director · Writer · Editor</p>
+          <p class="card-desc">A visually rich short film exploring layered human emotion through contrasting perspectives.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="card-thumb" style="background: linear-gradient(200deg, #141a1f 0%, #070b0f 100%);"></div>
+        <span class="card-num">003</span>
+        <div class="card-info">
+          <p class="card-genre">Short Film</p>
+          <h3 class="card-title">A Little Talk</h3>
+          <p class="card-year">Director · Writer</p>
+          <p class="card-desc">An intimate short exploring the weight of conversations left unsaid.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="card-thumb" style="background: linear-gradient(200deg, #1a1418 0%, #0f080d 100%);"></div>
+        <span class="card-num">004</span>
+        <div class="card-info">
+          <p class="card-genre">Short Film</p>
+          <h3 class="card-title">Emotions and You</h3>
+          <p class="card-year">Director · Editor</p>
+          <p class="card-desc">A contemplative study of emotional experience rendered through striking visual compositions.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="card-thumb" style="background: linear-gradient(200deg, #0f1a12 0%, #060d08 100%);"></div>
+        <span class="card-num">005</span>
+        <div class="card-info">
+          <p class="card-genre">Documentary</p>
+          <h3 class="card-title">Indian Army — Documentary</h3>
+          <p class="card-year">Director · Producer</p>
+          <p class="card-desc">Commissioned documentary film for the Indian Army, produced after two years of on-field research.</p>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="card-thumb" style="background: linear-gradient(200deg, #1a1718 0%, #0f0c0d 100%);"></div>
+        <span class="card-num">006</span>
+        <div class="card-info">
+          <p class="card-genre">Feature Film · In Development</p>
+          <h3 class="card-title">Untitled Feature</h3>
+          <p class="card-year">Writer · Director — In Production</p>
+          <p class="card-desc">Gaurav's debut feature film — currently in development, supported by years of practical research with the Indian Army.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REEL -->
+  <section id="reel">
+    <div class="section-header fade-up" style="justify-content: center;">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Showreel</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="reel-container fade-up">
+      <div class="reel-embed">
+        <iframe
+          src="https://www.youtube.com/embed/coDbPbpfVzE?rel=0&modestbranding=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          title="Gaurav Hrishikesh Thakur — Film Showreel"
+        ></iframe>
+      </div>
+      <p class="reel-note">Era of Light Films — Official Selection, Indian National Awards</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text">
+      <div class="section-header fade-up">
+        <span class="section-num">03</span>
+        <h2 class="section-title">About</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-body fade-up">
+        <p>
+          Gaurav Hrishikesh Thakur is a Film Director, Writer, and Editor based in Bremen, Germany. Creatively introspective and utopian in vision, he has spent over a decade crafting independent films and commercial projects that fuse high-end visual storytelling with deeply personal narratives.
+        </p>
+        <p>
+          From the age of 14, Gaurav knew he wanted to be a filmmaker — one who could integrate breathtaking visual effects into emotionally resonant stories. His father first opened his eyes to the art of cinematic construction, and that early curiosity grew into a lifelong craft.
+        </p>
+        <p>
+          He founded his own production company <em>Comutador Junkies Production</em> in 2012, and has since independently directed, written, produced, and edited over 20 film projects — including music videos, documentaries, and commercial work for the Indian Army. His short film <em>Era of Light</em> received an Official Selection at the Indian National Awards.
+        </p>
+        <p>
+          Currently, Gaurav is developing his debut feature film — a project supported by two years of on-field research with the Indian Armed Forces.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-highlights fade-up">
+      <div class="highlight-item">
+        <p class="highlight-label">Known For</p>
+        <p class="highlight-value">A Method in Multishade, A Little Talk, Emotions and You, Era of Light</p>
+      </div>
+      <div class="highlight-item">
+        <p class="highlight-label">Disciplines</p>
+        <p class="highlight-value">Directing · Writing · Editing · CGI & Visual Effects · Production</p>
+      </div>
+      <div class="highlight-item">
+        <p class="highlight-label">Awards & Recognition</p>
+        <p class="highlight-value">9 Student Category Awards — Bhumika IFF, Frames Film Festival, Maharashtra State Road Safety Mission, Rotaract Club of Bombay Film City</p>
+      </div>
+      <div class="highlight-item">
+        <p class="highlight-label">Based In</p>
+        <p class="highlight-value">Bremen, Germany</p>
+      </div>
+      <div class="highlight-item">
+        <p class="highlight-label">Production Company</p>
+        <p class="highlight-value">Era of Light Films · Comutador Junkies Production</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header fade-up">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="contact-intro">"Every film is a conversation between the filmmaker and the world."</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-item-label">Email</span>
+            <span class="contact-item-value"><a href="mailto:mail@eraoflightfilms.com">mail@eraoflightfilms.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Telephone</span>
+            <span class="contact-item-value"><a href="tel:+4917624213000">+49 176 2421 3000</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Address</span>
+            <span class="contact-item-value">Use Akschen 91, 28237 Bremen, Deutschland</span>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="https://www.instagram.com/thebombayblood/" target="_blank" rel="noopener" class="social-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            @thebombayblood
+          </a>
+          <a href="https://www.imdb.com/name/nm7240329/" target="_blank" rel="noopener" class="social-link">IMDb</a>
+        </div>
+      </div>
+
+      <div class="contact-form-side fade-up">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="jane@studio.com" />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Project collaboration / Inquiry" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleContactForm(event)">
+          Send Message
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+            <path d="M1 5H13M9 1L13 5L9 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Era of Light Films</span>
+    <span>© 2025 Gaurav Hrishikesh Thakur. All rights reserved.</span>
+    <span>Bremen, Deutschland</span>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Stagger children of grids
+    document.querySelectorAll('.projects-grid .fade-up').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 60}ms`;
+    });
+
+    // Nav scroll shrink
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.padding =
+        window.scrollY > 60 ? '0.9rem 3rem' : '1.4rem 3rem';
+    });
+
+    // Contact form
+    function handleContactForm(e) {
+      e.preventDefault();
+      const btn = e.currentTarget;
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#4a7c59';
+      setTimeout(() => {
+        btn.innerHTML = 'Send Message <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5H13M9 1L13 5L9 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>';
+        btn.style.background = '';
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
