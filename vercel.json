@@ -13,14 +13,3 @@
     }
   ]
 }
-```
-
-**4.** Click **"Commit changes..."** → **"Commit changes"**
-
----
-
-✅ Once both files are committed, your repo will look like this:
-```
-eraoflightfilms/
-├── index.html
-└── vercel.json
